@@ -56,7 +56,7 @@ const user = await getUser();
         </div>
         <div className="navbar-end gap-4">
           {
-            user?<LogoutLink>Log out</LogoutLink>:<>
+            user?<LogoutLink className=" btn btn-outline">Log out</LogoutLink>:<>
             <LoginLink className="btn">Sign in</LoginLink>
             <RegisterLink className="btn">Sign up</RegisterLink>
             </>
