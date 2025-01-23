@@ -1,7 +1,13 @@
 import Link from "next/link";
 import React from "react";
 
-const Navber = () => {
+import {RegisterLink, LoginLink} from "@kinde-oss/kinde-auth-nextjs/components";
+import {getKindeServerSession} from "@kinde-oss/kinde-auth-nextjs/server";
+import {LogoutLink} from "@kinde-oss/kinde-auth-nextjs/components";
+const Navber =async () => {
+  const {getUser} = getKindeServerSession();
+const user = await getUser();
+
   const links = (
     <>
       <li>
@@ -48,8 +54,15 @@ const Navber = () => {
            {links}
           </ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn">Login</a>
+        <div className="navbar-end gap-4">
+          {
+            user?<LogoutLink>Log out</LogoutLink>:<>
+            <LoginLink className="btn">Sign in</LoginLink>
+            <RegisterLink className="btn">Sign up</RegisterLink>
+            </>
+          }
+        
+        
         </div>
       </div>
     </div>
