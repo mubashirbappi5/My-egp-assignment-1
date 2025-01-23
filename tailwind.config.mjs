@@ -19,5 +19,8 @@ export default {
   daisyui: {
     themes: ["light",],
   },
+  safelist: [
+    "btn", "btn-primary", "card", "alert", // Add frequently used DaisyUI classes
+  ],
 
 };
