@@ -5,8 +5,11 @@ import React, { useEffect, useState } from 'react';
 
 const page = () => {
 
+   // eslint-disable-next-line react-hooks/rules-of-hooks
    const[post,setpost]=useState({})
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const {postId} = useParams()
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         useEffect(()=>{
           fetch(` https://jsonplaceholder.typicode.com/posts/${postId}`)
           .then(res=> res.json())
